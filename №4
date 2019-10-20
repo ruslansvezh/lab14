@@ -1,0 +1,32 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+int main() 
+{
+	setlocale(0, "");
+	int i = 0,N, max=0, num=0;
+	cout << "Введите кол-во элементов массива: ";
+	cin >> N;
+	int* array = new int[N];
+	for (i = 0; i < N; i++)
+	{
+		cout << "Введите элемент массива:";
+		cin >> array[i];
+	}
+	i = 1;
+	while (i < N)
+	{
+		if ( array[i]>array[i-1] && array[i]>array[i+1])
+		{
+			max = array[i];
+			num = i;
+			i++;
+		}
+		else
+		{
+			i++;
+		}
+	}
+	cout << " Номер локального максимума: " << num<<endl;
+	cout << max;
+}
