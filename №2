@@ -1,0 +1,38 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+int main() 
+{
+	setlocale(0, "");
+	int N, d = 0, i;
+	 {
+		cout << "Введите количество элементов массива: ";
+		cin >>N;
+		if (N > 0)
+		{
+			int* array = new int[N];
+			for (i = 0; i < N; i++) 
+			{
+				cout << "Введите элемент массива : ";
+				cin >> array[i];
+			}
+			d = array[1] - array[0];
+			i = 1;
+			while (array[i] - array[i - 1] == d)
+			{
+				i++;
+			}
+			if (i == N)
+			{
+				cout << "Это арифметическая прогрессия. Разность= " << d << endl;
+			}
+			else
+				cout << "Это не арифметическая прогрессия : 0" << endl;
+			
+		}
+		   else 
+		   {
+			   cout << "Введены неверные данные!" << endl;
+		   }
+	}
+}
